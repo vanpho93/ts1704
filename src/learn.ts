@@ -1,19 +1,25 @@
-interface User {
-    name: string;
-    age: number;
-    sayHello: () => void;
+class Person {
+    constructor(private name: string, public age: number) {}
 }
 
-// const teo: User = { name: 'Teo Nguyen', age: 10 };
-// const people: User[] = [
-//     teo,
-//     { name: 'Ti', age: 20 }
-// ];
+const p = new Person('teo nguyen', 10);
 
-class Person implements User {
-    name: string;
-    age: number;
-    sayHello() {
-        return 1;
+console.log(p);
+
+function add(a: number, b: number): number {
+    return a + b;
+}
+
+function identity<T>(arg: T): T {
+    return arg;
+}
+
+class Factory<T> {
+    constructor(private me: T) {}
+
+    getMe(): T {
+        return this.me;
     }
 }
+
+const x = new Factory<string>('');
