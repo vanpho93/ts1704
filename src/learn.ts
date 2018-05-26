@@ -1,4 +1,19 @@
-let someValue: any = 'this is a string';
+interface User {
+    name: string;
+    age: number;
+    sayHello: () => void;
+}
 
-console.log((someValue as string).length);
-console.log((<string>someValue).length);
+// const teo: User = { name: 'Teo Nguyen', age: 10 };
+// const people: User[] = [
+//     teo,
+//     { name: 'Ti', age: 20 }
+// ];
+
+class Person implements User {
+    name: string;
+    age: number;
+    sayHello() {
+        return 1;
+    }
+}
